@@ -1,0 +1,743 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		37A220242B7CCBE500BC86E2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37A220232B7CCBE500BC86E2 /* main.cpp */; };
+		37A220302B7CCC2400BC86E2 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 37A2202F2B7CCC2400BC86E2 /* main.c */; };
+		37A2203B2B7CCC4800BC86E2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37A2203A2B7CCC4800BC86E2 /* main.cpp */; };
+		37A220412B7CCC7000BC86E2 /* Crypto.h in Headers */ = {isa = PBXBuildFile; fileRef = 37A2203F2B7CCC7000BC86E2 /* Crypto.h */; };
+		37A220422B7CCC7000BC86E2 /* Crypto.c in Sources */ = {isa = PBXBuildFile; fileRef = 37A220402B7CCC7000BC86E2 /* Crypto.c */; };
+		37A220452B7CCCBF00BC86E2 /* PIShared.h in Headers */ = {isa = PBXBuildFile; fileRef = 37A220432B7CCCBF00BC86E2 /* PIShared.h */; };
+		37A220462B7CCCBF00BC86E2 /* PIShared.c in Sources */ = {isa = PBXBuildFile; fileRef = 37A220442B7CCCBF00BC86E2 /* PIShared.c */; };
+		37A2204A2B7CCEA300BC86E2 /* PI.c in Sources */ = {isa = PBXBuildFile; fileRef = 37A220492B7CCEA300BC86E2 /* PI.c */; };
+		37A2204D2B7CD0CA00BC86E2 /* libshared.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A220182B7CCBA700BC86E2 /* libshared.a */; };
+		37A220512B7CD18F00BC86E2 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A220502B7CD10E00BC86E2 /* libcrypto.a */; };
+		37A220532B7CD1D700BC86E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A220522B7CD1D700BC86E2 /* Foundation.framework */; };
+		37A220542B7CD1DE00BC86E2 /* libshared.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A220182B7CCBA700BC86E2 /* libshared.a */; };
+		37A220572B7CD1FA00BC86E2 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A220502B7CD10E00BC86E2 /* libcrypto.a */; };
+		37A220592B7CD20B00BC86E2 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A220582B7CD20B00BC86E2 /* Metal.framework */; };
+		37A2205B2B7CD21600BC86E2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A2205A2B7CD21600BC86E2 /* QuartzCore.framework */; };
+		37A2205C2B7CD23600BC86E2 /* libshared.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A220182B7CCBA700BC86E2 /* libshared.a */; };
+		37A2205F2B7CD23E00BC86E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A220522B7CD1D700BC86E2 /* Foundation.framework */; };
+		37A220602B7CD24600BC86E2 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A220582B7CD20B00BC86E2 /* Metal.framework */; };
+		37A220612B7CD24C00BC86E2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A2205A2B7CD21600BC86E2 /* QuartzCore.framework */; };
+		37A220652B7CD2DD00BC86E2 /* MetalFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37A220632B7CD2DD00BC86E2 /* MetalFactory.cpp */; };
+		37A220682B7CD32700BC86E2 /* GaussianElimination.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37A220662B7CD32700BC86E2 /* GaussianElimination.cpp */; };
+		37A2206B2B7CD37800BC86E2 /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37A220692B7CD37800BC86E2 /* Matrix.cpp */; };
+		37A2206E2B7CDF5000BC86E2 /* RandomStuff.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37A2206C2B7CDF5000BC86E2 /* RandomStuff.cpp */; };
+		37A2206F2B7CDF5000BC86E2 /* RandomStuff.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 37A2206D2B7CDF5000BC86E2 /* RandomStuff.hpp */; };
+		37A220712B7CDFAA00BC86E2 /* GaussianElimination_Helper.metal in Sources */ = {isa = PBXBuildFile; fileRef = 37A220702B7CDFAA00BC86E2 /* GaussianElimination_Helper.metal */; };
+		37A220742B7CE20700BC86E2 /* PlainGaussHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37A220722B7CE20700BC86E2 /* PlainGaussHelper.cpp */; };
+		37A220782B7CE29F00BC86E2 /* PI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37A220762B7CE29F00BC86E2 /* PI.cpp */; };
+		37A2207C2B7CE43C00BC86E2 /* MetalGauss.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37A2207A2B7CE43C00BC86E2 /* MetalGauss.cpp */; };
+		37A2207E2B7CE51000BC86E2 /* GaussHelper.metal in Sources */ = {isa = PBXBuildFile; fileRef = 37A2207D2B7CE51000BC86E2 /* GaussHelper.metal */; };
+		37A220852B7CE57800BC86E2 /* MetalFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37A220832B7CE57800BC86E2 /* MetalFactory.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		37A2204E2B7CD0CA00BC86E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 373B9A3D2B7CCAB500757103 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37A220172B7CCBA700BC86E2;
+			remoteInfo = shared;
+		};
+		37A220552B7CD1DE00BC86E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 373B9A3D2B7CCAB500757103 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37A220172B7CCBA700BC86E2;
+			remoteInfo = shared;
+		};
+		37A2205D2B7CD23600BC86E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 373B9A3D2B7CCAB500757103 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37A220172B7CCBA700BC86E2;
+			remoteInfo = shared;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		37A2201F2B7CCBE500BC86E2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		37A2202B2B7CCC2400BC86E2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		37A220362B7CCC4800BC86E2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		37A220182B7CCBA700BC86E2 /* libshared.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libshared.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		37A220212B7CCBE500BC86E2 /* verifier */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = verifier; sourceTree = BUILT_PRODUCTS_DIR; };
+		37A220232B7CCBE500BC86E2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		37A2202D2B7CCC2400BC86E2 /* logger */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = logger; sourceTree = BUILT_PRODUCTS_DIR; };
+		37A2202F2B7CCC2400BC86E2 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		37A220382B7CCC4800BC86E2 /* gauss-benchmark */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "gauss-benchmark"; sourceTree = BUILT_PRODUCTS_DIR; };
+		37A2203A2B7CCC4800BC86E2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		37A2203F2B7CCC7000BC86E2 /* Crypto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Crypto.h; sourceTree = "<group>"; };
+		37A220402B7CCC7000BC86E2 /* Crypto.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Crypto.c; sourceTree = "<group>"; };
+		37A220432B7CCCBF00BC86E2 /* PIShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PIShared.h; sourceTree = "<group>"; };
+		37A220442B7CCCBF00BC86E2 /* PIShared.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = PIShared.c; sourceTree = "<group>"; };
+		37A220472B7CCD8200BC86E2 /* metal-cpp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "metal-cpp"; sourceTree = "<group>"; };
+		37A220482B7CCEA300BC86E2 /* PI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PI.h; sourceTree = "<group>"; };
+		37A220492B7CCEA300BC86E2 /* PI.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = PI.c; sourceTree = "<group>"; };
+		37A2204B2B7CCEFF00BC86E2 /* LoggerContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoggerContext.h; sourceTree = "<group>"; };
+		37A220502B7CD10E00BC86E2 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../../../../../../opt/homebrew/Cellar/openssl@3/3.1.2/lib/libcrypto.a"; sourceTree = "<group>"; };
+		37A220522B7CD1D700BC86E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		37A220582B7CD20B00BC86E2 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		37A2205A2B7CD21600BC86E2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		37A220632B7CD2DD00BC86E2 /* MetalFactory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MetalFactory.cpp; sourceTree = "<group>"; };
+		37A220642B7CD2DD00BC86E2 /* MetalFactory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MetalFactory.hpp; sourceTree = "<group>"; };
+		37A220662B7CD32700BC86E2 /* GaussianElimination.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GaussianElimination.cpp; sourceTree = "<group>"; };
+		37A220672B7CD32700BC86E2 /* GaussianElimination.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GaussianElimination.hpp; sourceTree = "<group>"; };
+		37A220692B7CD37800BC86E2 /* Matrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix.cpp; sourceTree = "<group>"; };
+		37A2206A2B7CD37800BC86E2 /* Matrix.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Matrix.hpp; sourceTree = "<group>"; };
+		37A2206C2B7CDF5000BC86E2 /* RandomStuff.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RandomStuff.cpp; sourceTree = "<group>"; };
+		37A2206D2B7CDF5000BC86E2 /* RandomStuff.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RandomStuff.hpp; sourceTree = "<group>"; };
+		37A220702B7CDFAA00BC86E2 /* GaussianElimination_Helper.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = GaussianElimination_Helper.metal; sourceTree = "<group>"; };
+		37A220722B7CE20700BC86E2 /* PlainGaussHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PlainGaussHelper.cpp; sourceTree = "<group>"; };
+		37A220732B7CE20700BC86E2 /* PlainGaussHelper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PlainGaussHelper.hpp; sourceTree = "<group>"; };
+		37A220752B7CE24300BC86E2 /* PITypes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PITypes.hpp; sourceTree = "<group>"; };
+		37A220762B7CE29F00BC86E2 /* PI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PI.cpp; sourceTree = "<group>"; };
+		37A220772B7CE29F00BC86E2 /* PI.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PI.hpp; sourceTree = "<group>"; };
+		37A220792B7CE2D200BC86E2 /* Result.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Result.hpp; sourceTree = "<group>"; };
+		37A2207A2B7CE43C00BC86E2 /* MetalGauss.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MetalGauss.cpp; sourceTree = "<group>"; };
+		37A2207B2B7CE43C00BC86E2 /* MetalGauss.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MetalGauss.hpp; sourceTree = "<group>"; };
+		37A2207D2B7CE51000BC86E2 /* GaussHelper.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = GaussHelper.metal; sourceTree = "<group>"; };
+		37A220822B7CE55500BC86E2 /* Matrix.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Matrix.hpp; sourceTree = "<group>"; };
+		37A220832B7CE57800BC86E2 /* MetalFactory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MetalFactory.cpp; sourceTree = "<group>"; };
+		37A220842B7CE57800BC86E2 /* MetalFactory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MetalFactory.hpp; sourceTree = "<group>"; };
+		37A220862B7CE66F00BC86E2 /* GaussBenchmark.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GaussBenchmark.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		37A220162B7CCBA700BC86E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37A2201E2B7CCBE500BC86E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37A2205B2B7CD21600BC86E2 /* QuartzCore.framework in Frameworks */,
+				37A220542B7CD1DE00BC86E2 /* libshared.a in Frameworks */,
+				37A220532B7CD1D700BC86E2 /* Foundation.framework in Frameworks */,
+				37A220592B7CD20B00BC86E2 /* Metal.framework in Frameworks */,
+				37A220572B7CD1FA00BC86E2 /* libcrypto.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37A2202A2B7CCC2400BC86E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37A220512B7CD18F00BC86E2 /* libcrypto.a in Frameworks */,
+				37A2204D2B7CD0CA00BC86E2 /* libshared.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37A220352B7CCC4800BC86E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37A220612B7CD24C00BC86E2 /* QuartzCore.framework in Frameworks */,
+				37A2205C2B7CD23600BC86E2 /* libshared.a in Frameworks */,
+				37A220602B7CD24600BC86E2 /* Metal.framework in Frameworks */,
+				37A2205F2B7CD23E00BC86E2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		373B9A3C2B7CCAB500757103 = {
+			isa = PBXGroup;
+			children = (
+				37A220472B7CCD8200BC86E2 /* metal-cpp */,
+				37A220282B7CCBF000BC86E2 /* shared */,
+				37A220222B7CCBE500BC86E2 /* verifier */,
+				37A2202E2B7CCC2400BC86E2 /* logger */,
+				37A220392B7CCC4800BC86E2 /* gauss-benchmark */,
+				373B9A462B7CCAB500757103 /* Products */,
+				37A2204C2B7CD0CA00BC86E2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		373B9A462B7CCAB500757103 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37A220182B7CCBA700BC86E2 /* libshared.a */,
+				37A220212B7CCBE500BC86E2 /* verifier */,
+				37A2202D2B7CCC2400BC86E2 /* logger */,
+				37A220382B7CCC4800BC86E2 /* gauss-benchmark */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37A220222B7CCBE500BC86E2 /* verifier */ = {
+			isa = PBXGroup;
+			children = (
+				37A220622B7CD2BE00BC86E2 /* gaussian-elimination */,
+				37A220232B7CCBE500BC86E2 /* main.cpp */,
+				37A220692B7CD37800BC86E2 /* Matrix.cpp */,
+				37A2206A2B7CD37800BC86E2 /* Matrix.hpp */,
+				37A220752B7CE24300BC86E2 /* PITypes.hpp */,
+				37A220762B7CE29F00BC86E2 /* PI.cpp */,
+				37A220772B7CE29F00BC86E2 /* PI.hpp */,
+				37A220792B7CE2D200BC86E2 /* Result.hpp */,
+			);
+			path = verifier;
+			sourceTree = "<group>";
+		};
+		37A220282B7CCBF000BC86E2 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				37A2203F2B7CCC7000BC86E2 /* Crypto.h */,
+				37A220402B7CCC7000BC86E2 /* Crypto.c */,
+				37A220432B7CCCBF00BC86E2 /* PIShared.h */,
+				37A220442B7CCCBF00BC86E2 /* PIShared.c */,
+				37A2206C2B7CDF5000BC86E2 /* RandomStuff.cpp */,
+				37A2206D2B7CDF5000BC86E2 /* RandomStuff.hpp */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
+		37A2202E2B7CCC2400BC86E2 /* logger */ = {
+			isa = PBXGroup;
+			children = (
+				37A2202F2B7CCC2400BC86E2 /* main.c */,
+				37A220482B7CCEA300BC86E2 /* PI.h */,
+				37A220492B7CCEA300BC86E2 /* PI.c */,
+				37A2204B2B7CCEFF00BC86E2 /* LoggerContext.h */,
+			);
+			path = logger;
+			sourceTree = "<group>";
+		};
+		37A220392B7CCC4800BC86E2 /* gauss-benchmark */ = {
+			isa = PBXGroup;
+			children = (
+				37A2203A2B7CCC4800BC86E2 /* main.cpp */,
+				37A2207A2B7CE43C00BC86E2 /* MetalGauss.cpp */,
+				37A2207B2B7CE43C00BC86E2 /* MetalGauss.hpp */,
+				37A2207D2B7CE51000BC86E2 /* GaussHelper.metal */,
+				37A220822B7CE55500BC86E2 /* Matrix.hpp */,
+				37A220832B7CE57800BC86E2 /* MetalFactory.cpp */,
+				37A220842B7CE57800BC86E2 /* MetalFactory.hpp */,
+				37A220862B7CE66F00BC86E2 /* GaussBenchmark.hpp */,
+			);
+			path = "gauss-benchmark";
+			sourceTree = "<group>";
+		};
+		37A2204C2B7CD0CA00BC86E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37A2205A2B7CD21600BC86E2 /* QuartzCore.framework */,
+				37A220582B7CD20B00BC86E2 /* Metal.framework */,
+				37A220522B7CD1D700BC86E2 /* Foundation.framework */,
+				37A220502B7CD10E00BC86E2 /* libcrypto.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		37A220622B7CD2BE00BC86E2 /* gaussian-elimination */ = {
+			isa = PBXGroup;
+			children = (
+				37A220632B7CD2DD00BC86E2 /* MetalFactory.cpp */,
+				37A220642B7CD2DD00BC86E2 /* MetalFactory.hpp */,
+				37A220662B7CD32700BC86E2 /* GaussianElimination.cpp */,
+				37A220672B7CD32700BC86E2 /* GaussianElimination.hpp */,
+				37A220702B7CDFAA00BC86E2 /* GaussianElimination_Helper.metal */,
+				37A220722B7CE20700BC86E2 /* PlainGaussHelper.cpp */,
+				37A220732B7CE20700BC86E2 /* PlainGaussHelper.hpp */,
+			);
+			path = "gaussian-elimination";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		37A220142B7CCBA700BC86E2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37A220452B7CCCBF00BC86E2 /* PIShared.h in Headers */,
+				37A2206F2B7CDF5000BC86E2 /* RandomStuff.hpp in Headers */,
+				37A220412B7CCC7000BC86E2 /* Crypto.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		37A220172B7CCBA700BC86E2 /* shared */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37A2201B2B7CCBA700BC86E2 /* Build configuration list for PBXNativeTarget "shared" */;
+			buildPhases = (
+				37A220142B7CCBA700BC86E2 /* Headers */,
+				37A220152B7CCBA700BC86E2 /* Sources */,
+				37A220162B7CCBA700BC86E2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = shared;
+			productName = shared;
+			productReference = 37A220182B7CCBA700BC86E2 /* libshared.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		37A220202B7CCBE500BC86E2 /* verifier */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37A220252B7CCBE500BC86E2 /* Build configuration list for PBXNativeTarget "verifier" */;
+			buildPhases = (
+				37A2201D2B7CCBE500BC86E2 /* Sources */,
+				37A2201E2B7CCBE500BC86E2 /* Frameworks */,
+				37A2201F2B7CCBE500BC86E2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37A220562B7CD1DE00BC86E2 /* PBXTargetDependency */,
+			);
+			name = verifier;
+			productName = verifier;
+			productReference = 37A220212B7CCBE500BC86E2 /* verifier */;
+			productType = "com.apple.product-type.tool";
+		};
+		37A2202C2B7CCC2400BC86E2 /* logger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37A220312B7CCC2400BC86E2 /* Build configuration list for PBXNativeTarget "logger" */;
+			buildPhases = (
+				37A220292B7CCC2400BC86E2 /* Sources */,
+				37A2202A2B7CCC2400BC86E2 /* Frameworks */,
+				37A2202B2B7CCC2400BC86E2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37A2204F2B7CD0CA00BC86E2 /* PBXTargetDependency */,
+			);
+			name = logger;
+			productName = logger;
+			productReference = 37A2202D2B7CCC2400BC86E2 /* logger */;
+			productType = "com.apple.product-type.tool";
+		};
+		37A220372B7CCC4800BC86E2 /* gauss-benchmark */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37A2203C2B7CCC4800BC86E2 /* Build configuration list for PBXNativeTarget "gauss-benchmark" */;
+			buildPhases = (
+				37A220342B7CCC4800BC86E2 /* Sources */,
+				37A220352B7CCC4800BC86E2 /* Frameworks */,
+				37A220362B7CCC4800BC86E2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37A2205E2B7CD23600BC86E2 /* PBXTargetDependency */,
+			);
+			name = "gauss-benchmark";
+			productName = "gauss-benchmark";
+			productReference = 37A220382B7CCC4800BC86E2 /* gauss-benchmark */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		373B9A3D2B7CCAB500757103 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					37A220172B7CCBA700BC86E2 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					37A220202B7CCBE500BC86E2 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					37A2202C2B7CCC2400BC86E2 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					37A220372B7CCC4800BC86E2 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 373B9A402B7CCAB500757103 /* Build configuration list for PBXProject "secure-logging-cr" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 373B9A3C2B7CCAB500757103;
+			productRefGroup = 373B9A462B7CCAB500757103 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				37A220172B7CCBA700BC86E2 /* shared */,
+				37A220202B7CCBE500BC86E2 /* verifier */,
+				37A2202C2B7CCC2400BC86E2 /* logger */,
+				37A220372B7CCC4800BC86E2 /* gauss-benchmark */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37A220152B7CCBA700BC86E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37A220422B7CCC7000BC86E2 /* Crypto.c in Sources */,
+				37A2206E2B7CDF5000BC86E2 /* RandomStuff.cpp in Sources */,
+				37A220462B7CCCBF00BC86E2 /* PIShared.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37A2201D2B7CCBE500BC86E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37A2206B2B7CD37800BC86E2 /* Matrix.cpp in Sources */,
+				37A220682B7CD32700BC86E2 /* GaussianElimination.cpp in Sources */,
+				37A220742B7CE20700BC86E2 /* PlainGaussHelper.cpp in Sources */,
+				37A220652B7CD2DD00BC86E2 /* MetalFactory.cpp in Sources */,
+				37A220782B7CE29F00BC86E2 /* PI.cpp in Sources */,
+				37A220712B7CDFAA00BC86E2 /* GaussianElimination_Helper.metal in Sources */,
+				37A220242B7CCBE500BC86E2 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37A220292B7CCC2400BC86E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37A2204A2B7CCEA300BC86E2 /* PI.c in Sources */,
+				37A220302B7CCC2400BC86E2 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37A220342B7CCC4800BC86E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37A220852B7CE57800BC86E2 /* MetalFactory.cpp in Sources */,
+				37A2203B2B7CCC4800BC86E2 /* main.cpp in Sources */,
+				37A2207C2B7CE43C00BC86E2 /* MetalGauss.cpp in Sources */,
+				37A2207E2B7CE51000BC86E2 /* GaussHelper.metal in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		37A2204F2B7CD0CA00BC86E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37A220172B7CCBA700BC86E2 /* shared */;
+			targetProxy = 37A2204E2B7CD0CA00BC86E2 /* PBXContainerItemProxy */;
+		};
+		37A220562B7CD1DE00BC86E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37A220172B7CCBA700BC86E2 /* shared */;
+			targetProxy = 37A220552B7CD1DE00BC86E2 /* PBXContainerItemProxy */;
+		};
+		37A2205E2B7CD23600BC86E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37A220172B7CCBA700BC86E2 /* shared */;
+			targetProxy = 37A2205D2B7CD23600BC86E2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		373B9A4A2B7CCAB500757103 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/metal-cpp",
+					"/opt/homebrew/opt/openssl@3/include",
+				);
+				LIBRARY_SEARCH_PATHS = "/opt/homebrew/opt/openssl@3/lib";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		373B9A4B2B7CCAB500757103 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/metal-cpp",
+					"/opt/homebrew/opt/openssl@3/include",
+				);
+				LIBRARY_SEARCH_PATHS = "/opt/homebrew/opt/openssl@3/lib";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		37A220192B7CCBA700BC86E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		37A2201A2B7CCBA700BC86E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		37A220262B7CCBE500BC86E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/opt/homebrew/Cellar/openssl@3/3.1.2/lib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		37A220272B7CCBE500BC86E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/opt/homebrew/Cellar/openssl@3/3.1.2/lib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		37A220322B7CCC2400BC86E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/opt/homebrew/Cellar/openssl@3/3.1.2/lib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		37A220332B7CCC2400BC86E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/opt/homebrew/Cellar/openssl@3/3.1.2/lib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		37A2203D2B7CCC4800BC86E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		37A2203E2B7CCC4800BC86E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		373B9A402B7CCAB500757103 /* Build configuration list for PBXProject "secure-logging-cr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				373B9A4A2B7CCAB500757103 /* Debug */,
+				373B9A4B2B7CCAB500757103 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37A2201B2B7CCBA700BC86E2 /* Build configuration list for PBXNativeTarget "shared" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37A220192B7CCBA700BC86E2 /* Debug */,
+				37A2201A2B7CCBA700BC86E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37A220252B7CCBE500BC86E2 /* Build configuration list for PBXNativeTarget "verifier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37A220262B7CCBE500BC86E2 /* Debug */,
+				37A220272B7CCBE500BC86E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37A220312B7CCC2400BC86E2 /* Build configuration list for PBXNativeTarget "logger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37A220322B7CCC2400BC86E2 /* Debug */,
+				37A220332B7CCC2400BC86E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37A2203C2B7CCC4800BC86E2 /* Build configuration list for PBXNativeTarget "gauss-benchmark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37A2203D2B7CCC4800BC86E2 /* Debug */,
+				37A2203E2B7CCC4800BC86E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 373B9A3D2B7CCAB500757103 /* Project object */;
+}
