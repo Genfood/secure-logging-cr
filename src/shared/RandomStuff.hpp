@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <random>
 
+
 size_t *distinctRandomEz(size_t range, int k);
 size_t *distinctRandomEz(size_t range, int k, int seed);
 

@@ -17,12 +17,12 @@ extern "C" {
 
 namespace PI {
     typedef struct _VerifierContext {
-        std::string logFileDirectory;
-        std::string outFile;
-        std::string masterKeyPath;
+        std::string logFileDirectory; // directory holding the encrypted log file.
+        std::string outFile; // file path of the output log file, which will hold the readable logs.
+        std::string masterKeyPath; // master key path.
         int n; // max number of log entries.
-        int m;
-        bool useMetal;
+        int m; // log file length.
+        bool useMetal; // indicator to use GPU oder CPU
     } VerifierContext;
     
     typedef std::array<unsigned char, KEY_SIZE> KEY_TYPE;
@@ -40,12 +40,13 @@ namespace PI {
         int lj;
     } KeyStoreEntry;
     
+    // define types for the requiered byte arrays
     typedef std::array<unsigned char, ID_LEN> ID_TYPE;
     typedef std::array<unsigned char, INTEGRITY_TAG_LEN> TAG_TYPE;
     typedef std::array<unsigned char, CIPHERTEXT_LEN> XOR_TYPE;
     typedef std::array<unsigned char, MESSAGE_LEN> LOG_MESSAGE_TYPE;
     /*
-     struct that stores one log entry of the encrypted log file in it.
+     struct that holds one "line" of the log.
      */
     typedef struct _Tau_i {
         XOR_TYPE XOR;

@@ -14,7 +14,6 @@ int CreateID(unsigned char *key, int j, unsigned char IDlj[ID_LEN])
 {
     int inputSize = ID_LEN + sizeof(int);
     unsigned char inputBuffer[inputSize];
-    //IDlj = malloc(ID_LEN);
     
     memcpy(inputBuffer, GAMMA_DASH, AES_BLOCK_LEN);
     memcpy(inputBuffer + AES_BLOCK_LEN, &j, sizeof(int));

@@ -55,6 +55,7 @@ PRGContext *CreatePRGContext(unsigned char seed[KEY_SIZE])
     return context;
 }
 
+// PRG helper method
 static int _PRG(unsigned char *seed, unsigned int *counter, const EVP_CIPHER *cipher, unsigned char *buffer, int size)
 {
     // calculate the number of aes blocks and ceil if it is not a multiple of the AES block size.
@@ -90,7 +91,6 @@ static int _PRG(unsigned char *seed, unsigned int *counter, const EVP_CIPHER *ci
     
     return 1;
 }
-
 
 int PRG128(PRG128Context *ctx, unsigned char *buffer, int size)
 {
@@ -222,10 +222,6 @@ static int exists(int element, const int arr[], size_t size)
     return 0;
 }
 
-/*
- Generates a uniformly distributed random number, within a upper bound. Inclusive 0 exclusive the upper bound.
- [0, upperBound)
- */
 unsigned int UniformRandomInt(PRGContext *ctx, const unsigned int upperBound)
 {
     unsigned long multipleOfUpperBound;
@@ -264,10 +260,6 @@ unsigned int UniformRandomInt(PRGContext *ctx, const unsigned int upperBound)
     return rand % upperBound;
 }
 
-/*
- Deterministic Distinct Random Number Generator.
- Generates a list of k distinct random numbers. [0, upperBound) Inclusive 0 exclusive the upper bound.
- */
 int DRN(unsigned char *seed, int k, int upperBound, int *kRandom)
 {
     unsigned int rand;

@@ -33,7 +33,7 @@ int AddLogEntry(PIContext *ctx, unsigned char *logMessage, int logMessageSize)
         Tlj[INTEGRITY_TAG_LEN],
         IDlj[ID_LEN];
     
-    int kRandom[K], m = ceil(ctx->maxEntries * C);
+    int kRandom[K];
     
     // derive keys
     if (0 == DeriveSubKeys(ctx->sessionKey, encKey, drnKey, tagKey, idKey))
@@ -44,28 +44,27 @@ int AddLogEntry(PIContext *ctx, unsigned char *logMessage, int logMessageSize)
     
     
     // cipherLogMessage = malloc(MESSAGE_LEN + IV_SIZE + MAC_LEN);
-    
+    // line 1
     if (0 == encryptLog(encKey, logMessage, logMessageSize, cipherLogMessage)) {
         perror("Error: Failed to encrypt the log message.\n");
         
         return 0;
     }
-    // TODO: could be removed, but:
-    // usefull for debugging, stores the encrypted logs in a seperate file.
-    /*FILE *f = fopen("/Users/gollum/git/Masterarbeit/MA/POCs/C++/m1-test/logger/test.log", "ab");
-    fwrite(cipherLogMessage, 1, CIPHERTEXT_LEN, f);
     
-    fclose(f);
-    */
-    if (0 == DRN(drnKey, K, m, kRandom)){
+    // Create the k distinct random locations within the number m (which is the log file "length").
+    // line 2
+    if (0 == DRN(drnKey, K, ctx->m, kRandom)){
         perror("Error: Failed to create k distinct random numbers.\n");
         return 0;
     }
     
+    // XOR ci (the encrypted log file) at the k distinct random locations within the log file.
+    // line 4
     int l;
     for (int j = 0; j < K; ++j) {
         l = kRandom[j];
         
+        // seek to the requiered location within the log file
         if (fseek(ctx->logFile, l * LOG_LEN, SEEK_SET) != 0) {
             printf("Error: Unable to move the file position indicator.\n");
             
@@ -81,6 +80,7 @@ int AddLogEntry(PIContext *ctx, unsigned char *logMessage, int logMessageSize)
             return 0;
         }
         
+        // read the location from the log file.
         if (fread(TauiBuffer, 1, LOG_LEN, ctx->logFile) != LOG_LEN) {
             printf("Error: reading from the file.\n");
             int errnum = errno;
@@ -90,11 +90,14 @@ int AddLogEntry(PIContext *ctx, unsigned char *logMessage, int logMessageSize)
         }
     
         // cipher ⊕ XORlj
+        // XOR the XOR parts.
+        // line 5
         for (int i = 0; i < CIPHERTEXT_LEN; ++i) {
             XORlj[i] = TauiBuffer[i] ^ cipherLogMessage[i];
         }
         
         // create integrity TAG
+        // line 6
         if (0 == CreateIntegrityTag(tagKey, XORlj, Tlj)) {
             printf("Error: Failed to create the integrity tag.\n");
             
@@ -102,13 +105,14 @@ int AddLogEntry(PIContext *ctx, unsigned char *logMessage, int logMessageSize)
         }
         
         // create ID
-        // TODO: Frage, wird die ID wirklich aus j erstellt oder aus der Nummer die sich hinter j verbirgt?
+        // line 7
         if (0 == CreateID(idKey, j, IDlj)) {
             printf("Error: Failed to create ID.\n");
             
             return 0;
         }
         
+        // seek to the position again
         if (fseek(ctx->logFile, l * LOG_LEN, SEEK_SET) != 0) {
             printf("Error: Unable to move the file position indicator.\n");
             
@@ -127,29 +131,37 @@ int AddLogEntry(PIContext *ctx, unsigned char *logMessage, int logMessageSize)
         }
     }
     
+    // key evolution
+    // line 9
     updateKey(ctx);
-    //printf("INFO: Entry has been logged.\n");
+    
     return 1;
 }
 
 void Init(PIContext *ctx)
 {
     size_t fileSize = ctx->m * LOG_LEN; // m * LOG_LEN
-    
+    // line 2
     if (createNewLogFile(ctx->logFile, fileSize) == 0){
         /* Failed to create new log file. */
         perror("ERROR: Failed to initiate the log file, with the given size.");
         exit(EXIT_FAILURE);
     }
     
-    // declare context outside of the file preperation, to reuse the given context if more then one file will be filled up.
+    // declare context outside of the file preperation, to reuse the given context if more then one file will be filled up. (not in this thesis)
     PRGContext *prgContext = CreatePRGContext(ctx->sessionKey);
-    assert(prgContext != NULL /* Failed to create PRF contect. */);
-    
+    if (prgContext == NULL) {
+        perror("ERROR: Failed to create the prg Context.");
+        exit(EXIT_FAILURE);
+    }
+    // line 4
+    // write random pad.
     initializeLogFileWithPseudoRandomPad(prgContext, ctx->logFile, ctx->m);
     
     free(prgContext);
     
+    // First key evolution.
+    // line 6
     updateKey(ctx);
 }
 
@@ -197,9 +209,6 @@ PIContext *CreatePIContext(unsigned long n, const char *keyPath, const char *log
         memcpy(ctx->sessionKey, masterKey, KEY_SIZE);
     }
     
-    
-    
-    
     ctx->keyPath = sessionKeyPath;
     ctx->logFileDirectory = logFileDir;
     ctx->maxEntries = n;
@@ -236,6 +245,8 @@ PIContext *CreatePIContext(unsigned long n, const char *keyPath, const char *log
     return ctx;
 }
 
+// helper method:
+// create a new log file of the requested size.
 static int createNewLogFile(FILE *file, unsigned long fileSize)
 {
     if (file == NULL) {
@@ -257,24 +268,34 @@ static int createNewLogFile(FILE *file, unsigned long fileSize)
     return 1;
 }
 
+// helper function:
+// writes the random pad into the empty file.
 static void initializeLogFileWithPseudoRandomPad(PRGContext *ctx, FILE *file, size_t m)
 {
     unsigned char buffer[LOG_LEN];
     
     fseek(file, 0, SEEK_SET);
+    // write random pad "line" by "line".
     for (int i = 0; i < m; ++i) {
-        assert(writePRGToFile(ctx, file, buffer, LOG_LEN) == 1);
+        if (writePRGToFile(ctx, file, buffer, LOG_LEN) != 1) {
+            perror("ERROR: Failed to write the random pad.");
+            exit(EXIT_FAILURE);
+        }
     }
 }
 
+// helper function
+// writes a specific amount of pseudo random data into the provided file.
 static int writePRGToFile(PRGContext *ctx, FILE *file, unsigned char *buffer, int bufferSize)
 {
+    // Create pseudo random data.
     if (PRG(ctx, buffer, bufferSize) == -1)
     {
         perror("ERROR: Creating random PAD.\n");
         return -1;
     }
     
+    // write the random data into the file.
     size_t bytesWritten = fwrite(buffer, 1, bufferSize, file);
     
     if (bytesWritten != bufferSize)
@@ -286,6 +307,8 @@ static int writePRGToFile(PRGContext *ctx, FILE *file, unsigned char *buffer, in
     return 1;
 }
 
+// helper function:
+// key evolution + updating the key file.
 static int updateKey(PIContext *ctx)
 {
     unsigned char nextKey[KEY_SIZE];
@@ -348,6 +371,18 @@ static int writeKey(unsigned char key[KEY_SIZE], char *path)
     return 1;
 }
 
+/*
+ * Function: encryptLog
+ * --------------------
+ * Will AE$ encrypt the provided log message, by uisng AES_256_CTR + CMAC.
+ *
+ * key: the current session key for encryption.
+ * logMessage: the log message to encrypt.
+ * logMessageSize: the size of the log message.
+ * cipherLogMessage: (ci) the ciphertext, always of the size IV + MESSAGE_LEN + MAC_LEN.
+ *
+ * return: 0 on failure and IV_SIZE + MESSAGE_LEN + MAC_LEN on success.
+ */
 static int encryptLog(unsigned char *key, unsigned char *logMessage, int logMessageSize, unsigned char *cipherLogMessage)
 {
     unsigned char iv[IV_SIZE];
@@ -363,6 +398,7 @@ static int encryptLog(unsigned char *key, unsigned char *logMessage, int logMess
     memset(paddedMessage, 0, sizeof(paddedMessage));
     memcpy(paddedMessage, logMessage, logMessageSize);
     
+    // encrypt the log message.
     if (MESSAGE_LEN != (len = AES_256_CTR_encrypt(paddedMessage, MESSAGE_LEN, key, iv, ciphertext)))
     {
         perror("ERROR: Log encryption failed.\n");
@@ -372,8 +408,7 @@ static int encryptLog(unsigned char *key, unsigned char *logMessage, int logMess
     memcpy(cipherLogMessage, iv, IV_SIZE);
     memcpy(cipherLogMessage + IV_SIZE, ciphertext, MESSAGE_LEN);
     
-    // TODO: use a different key for the encrypt than MAC, MAC key?
-    // No, for GCM also only one key is used?
+    // Create the MAC.
     CMAC(key, ciphertext, MESSAGE_LEN, mac, &macLen, MAC_LEN);
     
     memcpy(cipherLogMessage + IV_SIZE + MESSAGE_LEN, mac, MAC_LEN);

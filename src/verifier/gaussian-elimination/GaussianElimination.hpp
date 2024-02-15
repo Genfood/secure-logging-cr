@@ -24,7 +24,10 @@ namespace Gauss {
         MetalFactory *_factory;
         
         ~GaussianElimination();
-        // Solve gauss
+        /*
+         * Function: solve
+         * solves the provided SLE, using metal.
+         */
         std::vector<PI::XOR_TYPE> solve();
         void gaussForwardReduction();
         

@@ -1,6 +1,7 @@
 //
 //  PlainGaussHelper.hpp
 //  verifier
+// solve gaussian elimination using the CPU, some parts will be reused during the GPU process.
 //
 //  Created by Florian on 15.01.24.
 //

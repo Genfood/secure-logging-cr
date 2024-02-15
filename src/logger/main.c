@@ -1,6 +1,10 @@
 //
 //  main.cpp
 //  logger
+// This file is the entry point of the log creation part, it aims to simulate the log creation process.
+// It first calls the Init (initialization) methods, which creates the log file of the requested size.
+// Second, AddLogEntry (add item) will be called for every single log entry in the provided log file.
+// This file contains a lot of less important helper methods for parsing arguments, and providing the logs.
 //
 //  Created by Florian on 27.10.23.
 //
@@ -12,7 +16,6 @@
 #include "PI.h"
 #include "LoggerContext.h"
 
-#define N 10
 #define MAX_LINE_LENGTH MESSAGE_LEN // length of the define max log legnth
 
 LoggerContext parseArgs(int argc, const char * argv[]);
@@ -20,17 +23,25 @@ char **readLogs(const char *path, int *logCount, int maxlogCount);
 
 int main(int argc, const char * argv[]) {
     struct timespec start, end;
-    long seconds, nanoseconds;;
+    long seconds, nanoseconds;
     
+    // parse the provided arguments into the context struct.
     LoggerContext loggerCtx = parseArgs(argc, argv);
     int logCount;
+    // read the logs from the provided log file.
     char **logs = readLogs(loggerCtx.logPath, &logCount, loggerCtx.maxLogs);
     
+    // Create a Logger Context struct, which contains all important information, like the maxmum number of log files.
     PIContext *ctx = CreatePIContext(logCount, loggerCtx.outputPath, loggerCtx.outputPath, loggerCtx.logFileName);
+    
+    // Call the init algorithm.
+    // This will initialize the log file of the according size, and will write the pseudo random pad.
     Init(ctx);
+    
+    
     clock_gettime(CLOCK_MONOTONIC, &start);
     for (int i = 0; i < logCount; ++i) {
-        // Pass the modified string to AddLogEntry
+        // Pass the modified string to AddLogEntry (add item).
         AddLogEntry(ctx, (unsigned char *)logs[i], (int)strlen(logs[i]));
     }
     clock_gettime(CLOCK_MONOTONIC, &end);

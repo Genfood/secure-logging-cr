@@ -1,6 +1,7 @@
 //
 //  main.cpp
 //  verifier
+// Entry point of the log verifier. Holding also a helper functions to parse the provided arguments...
 //
 //  Created by Florian on 15.11.23.
 //
@@ -26,19 +27,6 @@ using std::chrono::duration;
 static PI::VerifierContext parseCommandLineArguments(int argc, const char * argv[]);
 
 
-std::vector<unsigned char> hexStringToBytes(const std::string& hexString) {
-    std::vector<unsigned char> bytes;
-
-    std::istringstream iss(hexString);
-    unsigned int byteValue;
-
-    while (iss >> std::hex >> byteValue) {
-        bytes.push_back(static_cast<unsigned char>(byteValue));
-    }
-
-    return bytes;
-}
-
 int main(int argc, const char * argv[]) {
     PI::VerifierContext ctx;
     
@@ -48,9 +36,10 @@ int main(int argc, const char * argv[]) {
     std::cout << "Start verifiying logs.\n";
     
     auto t1 = high_resolution_clock::now();
-    
+    // create instance of the verifier, based on the context holding all important information.
     PI::Verifier verifier(&ctx);
     
+    // start the verification of the provided log file.
     auto result = verifier.Verify();
     auto t2 = high_resolution_clock::now();
     
@@ -76,7 +65,6 @@ static PI::VerifierContext parseCommandLineArguments(int argc, const char * argv
             // Check if there is a value following the -k option
             if (i + 1 < argc) {
                 i++;
-                //ctx.masterKeyPath = new char[strlen(argv[i]) + 1];
                 ctx.masterKeyPath = argv[i];
             } else {
                 std::cerr << "Error: Missing value for -k option." << std::endl;
@@ -86,7 +74,6 @@ static PI::VerifierContext parseCommandLineArguments(int argc, const char * argv
             // Check if there is a value following the -l option
             if (i + 1 < argc) {
                 i++;
-                //ctx.logFileDirectory = new char[strlen(argv[i]) + 1];
                 ctx.logFileDirectory = argv[i];
             } else {
                 std::cerr << "Error: Missing value for -l option." << std::endl;
@@ -96,7 +83,6 @@ static PI::VerifierContext parseCommandLineArguments(int argc, const char * argv
             // Check if there is a value following the -l option
             if (i + 1 < argc) {
                 i++;
-                //ctx. = new char[strlen(argv[i]) + 1];
                 ctx.outFile = argv[i];
             } else {
                 std::cerr << "Error: Missing value for -o option." << std::endl;

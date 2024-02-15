@@ -196,6 +196,7 @@ namespace Gauss{
     
     std::vector<PI::XOR_TYPE> GaussianElimination::solve()
     {
+        // forward reduction
         auto t1 = high_resolution_clock::now();
         gaussForwardReduction();
         auto t2 = high_resolution_clock::now();
@@ -207,7 +208,7 @@ namespace Gauss{
         println("M and T after FR:");
         std::cout << "Detected Rank: " << std::to_string(RankOf(_m)) << std::endl;
         printMatrixes();
-        
+        // apply bookkeeping
         auto t3 = high_resolution_clock::now();
         std::vector<PI::XOR_TYPE> v_afterBookkeeping = sendBookkeepingCommand();
         auto t4 = high_resolution_clock::now();
@@ -218,6 +219,8 @@ namespace Gauss{
         
         println("M and T after BK:");
         printMatrixes();
+        
+        // Back Substitution
         auto t5 = high_resolution_clock::now();
         std::vector<PI::XOR_TYPE> c = PlainGaussHelper::BackSubstitution(_m, v_afterBookkeeping);
         auto t6 = high_resolution_clock::now();
