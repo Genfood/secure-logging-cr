@@ -2,6 +2,7 @@
 //  Matrix.hpp
 //  verifier
 //
+//  Copyright © 2023 Airbus Commercial Aircraft
 //  Created by Florian on 17.11.23.
 //
 

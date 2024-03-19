@@ -2,6 +2,7 @@
 //  RandomStuff.hpp
 //  shared
 //
+//  Copyright © 2023 Airbus Commercial Aircraft
 //  Created by Florian on 18.10.23.
 //
 

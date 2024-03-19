@@ -1,8 +1,9 @@
 //
 //  MetalFactory.cpp
 //  verifier
-// This file holds a lot of utility functionality helping to handle the Metal implementation.
+//  This file holds a lot of utility functionality helping to handle the Metal implementation.
 //
+//  Copyright © 2023 Airbus Commercial Aircraft
 //  Created by Florian on 21.11.23.
 //
 

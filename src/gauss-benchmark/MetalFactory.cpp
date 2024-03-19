@@ -2,6 +2,7 @@
 //  MetalFactory.cpp
 //  gauss-benchmark
 //
+//  Copyright © 2023 Airbus Commercial Aircraft
 //  Created by Florian on 26.10.23.
 //
 

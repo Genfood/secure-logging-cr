@@ -1,8 +1,9 @@
 //
 //  PlainGaussHelper.hpp
 //  verifier
-// solve gaussian elimination using the CPU, some parts will be reused during the GPU process.
+// 	solve gaussian elimination using the CPU, some parts will be reused during the GPU process.
 //
+//  Copyright © 2023 Airbus Commercial Aircraft
 //  Created by Florian on 15.01.24.
 //
 #ifndef PlainGaussHelper_hpp

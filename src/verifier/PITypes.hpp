@@ -2,6 +2,7 @@
 //  PITypes.hpp
 //  verifier
 //
+//  Copyright © 2023 Airbus Commercial Aircraft
 //  Created by Florian on 21.11.23.
 //
 

@@ -1,11 +1,12 @@
 //
 //  main.cpp
 //  logger
-// This file is the entry point of the log creation part, it aims to simulate the log creation process.
-// It first calls the Init (initialization) methods, which creates the log file of the requested size.
-// Second, AddLogEntry (add item) will be called for every single log entry in the provided log file.
-// This file contains a lot of less important helper methods for parsing arguments, and providing the logs.
+//  This file is the entry point of the log creation part, it aims to simulate the log creation process.
+//  It first calls the Init (initialization) methods, which creates the log file of the requested size.
+//  Second, AddLogEntry (add item) will be called for every single log entry in the provided log file.
+//  This file contains a lot of less important helper methods for parsing arguments, and providing the logs.
 //
+//  Copyright © 2023 Airbus Commercial Aircraft
 //  Created by Florian on 27.10.23.
 //
 

@@ -2,6 +2,7 @@
 //  LoggerContext.h
 //  logger
 //
+//  Copyright © 2023 Airbus Commercial Aircraft
 //  Created by Gollum on 17.01.24.
 //
 

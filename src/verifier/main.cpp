@@ -1,8 +1,9 @@
 //
 //  main.cpp
 //  verifier
-// Entry point of the log verifier. Holding also a helper functions to parse the provided arguments...
+//  Entry point of the log verifier. Holding also a helper functions to parse the provided arguments...
 //
+//  Copyright © 2023 Airbus Commercial Aircraft
 //  Created by Florian on 15.11.23.
 //
 

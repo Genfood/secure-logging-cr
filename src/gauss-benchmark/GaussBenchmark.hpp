@@ -2,6 +2,7 @@
 //  GaussBenchmark.hpp
 //  gauss-benchmark
 //
+//  Copyright © 2023 Airbus Commercial Aircraft
 //  Created by Florian on 19.01.24.
 //
 

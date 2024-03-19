@@ -2,6 +2,7 @@
 //  PI.h
 //  logger
 //
+//  Copyright © 2023 Airbus Commercial Aircraft
 //  Created by Florian on 27.10.23.
 //
 
@@ -25,7 +26,7 @@ typedef struct {
     const char *logFileDirectory; // Directory holding the log files.
     const char *logFileNamePrefix; // Name of the log file.
     unsigned long maxEntries; // (n) Maximum number of logs the file could hold.
-    int m; // m = m * c.
+    int m; // m = n * c.
     FILE *logFile; // File pointer of the log file.
     FILE *keyFile; // File pointer of the session key file.
 } PIContext;
