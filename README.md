@@ -2,7 +2,8 @@
 
 This repository contains an implementation of Blass and Noubir's paper: [Forward Security with Crash Recovery for Secure Logs](https://eprint.iacr.org/2019/506)
 
-The implementation is part of my master thesis. It is currently only tested on my MacBook, and parts of it are written for Metal. The current state is unlikely to run on any other hardware other than Apple. This is likely to change in the future.
+
+This implementation is part of my master's thesis, which was submitted as part of the IT Security Master's Graduation Program at Airbus Commercial Aircraft. It is currently only tested on my MacBook, and parts of it are written for Metal. The current state is unlikely to run on any other hardware other than Apples. This will maybe change in the future.
 
 ## Information
 
@@ -42,3 +43,7 @@ The benchmarking utility has several arguments, which could be passed on the sta
 - **-max | --max**: the ending to which should be tested. The provided number x will be the power to two: 2^x.
 - **-bs | --bucket-size**: A comma separated list of bucket sizes on which should be tested. Allowed values are: 1, 32, 64, 256.
 - **-d | --debug-prints**: flag indicating to print debug statements.
+
+## Disclaimer
+
+Copyright © 2024 Airbus Commercial Aircraft
